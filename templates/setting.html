@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% block content %}
+{% include 'navbar.html' %}
+<style>
+	.profile-pic{
+		max-width: 200px;
+		max-height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+</style>
+
+<br>
+<div class = 'row'>
+    <div class = 'col-md-3'>
+        <div class ='card card-body'>
+            <h5>Account Settings</h5>
+            <hr>
+            <img class = 'profile-pic' src = '{{request.user.customer.profile_pic.url}}'>
+        </div>
+    </div>
+    <div class = 'col-md-9'>
+        <div class = 'card card-body'>
+            <h5>Update</h5>
+            <hr>
+            <form action = '', method = 'post', enctype = 'multipart/form-data'>
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class = 'btn btn-info'>Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

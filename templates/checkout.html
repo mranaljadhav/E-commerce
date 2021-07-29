@@ -1,0 +1,158 @@
+{% extends 'main.html' %}
+{% block content %}
+{% include 'navbar.html' %}
+<br>
+<div class = 'row'>
+    <div class = 'col-lg-6'>
+        <div class = 'box-element' id = 'form-wrapper'>
+            <form id = 'form'>
+                <div id = 'user-info'>
+                    <div class = 'form-field'>
+                        <input class = 'form-control' type = 'text' name = 'name' placeholder = 'Name' required>
+                    </div>
+                    <div class = 'form-field'>
+                        <input class = 'form-control' type = 'email' name = 'email' placeholder = 'Email ID' required>
+                    </div>
+                </div>
+
+                <div id = 'shipping-info'>
+                    <hr>
+				    <p>Shipping Information:</p>
+				    <hr>
+                    <div class = 'form-field'>
+                        <input class = 'form-control' type = 'text' name = 'address' placeholder = 'Address' required>
+                    </div>
+                    <div class = 'form-field'>
+                        <input class = 'form-control' type = 'text' name = 'city' placeholder = 'City' required>
+                    </div>
+                    <div class = 'form-field'>
+                        <input class = 'form-control' type = 'text' name = 'state' placeholder = 'State' required>
+                    </div>
+                    <div class = 'form-field'>
+                        <input class = 'form-control' type = 'text' name = 'zipcode' placeholder = 'Zip code' required>
+                    </div>
+                </div>
+                <hr>
+                <input id = 'form-button' class = 'btn btn-success btn-block' type = 'submit' value = 'Continue'>
+            </form>
+        </div> 
+        <br>
+        <div class = 'box-element hidden' id = "payment-info">
+            <small>Paypal Option</small>
+            <button id = 'make-payment'>Make Payment</button>
+        </div>
+    </div>  
+    <div class = 'col-lg-6'>
+        <div class = 'box-element'>
+            <a class = 'btn btn-outline-dark' href = "{% url 'cart' %}">&#x2190;Back to cart</a>
+            <hr>
+            <h3>Order Summary</h3>
+            <hr>
+            {% for item in items %}
+            <div class='cart-row'>
+                <div style = "flex:2"><img class = "row-image" src = "{{item.product.img.url}}"></div>
+                <div style = "flex:2"><p>{{item.product.name}}</p></div>
+                <div style = "flex:2"><p>{{item.product.price}}</p></div>
+                <div style = "flex:2"><p>{{item.quantity}}x</p></div>
+            </div>
+            {% endfor %}
+            <h5>Items : {{order.get_cart_total_item}}</h5>
+            <h5>Total : {{order.get_cart_total}}</h5>
+        </div>
+    </div>   
+</div>
+
+<script type = "text/javascript">
+    var shipping = '{{order.shipping}}'
+    var total = '{{order.get_cart_total}}'
+    
+    // if product is digital or shipping == 'False' then hide shipping-info
+     if (shipping == 'False') 
+     {
+        document.getElementById('shipping-info').innerHTML =' '
+     }
+     // if user is authenticated user then hide user-info .
+     if(user != 'AnonymousUser')
+    {
+     document.getElementById('user-info').innerHTML=''
+     }
+     // when shipping is digit & user is authenticated  add class of hidden to form-wrpper and remove the class of hidden from payment-info.
+     if(shipping == 'False' && user !='AnonymousUser')
+     {
+        document.getElementById('form-wrapper').classList.add('hidden');
+        document.getElementById('payment-info').classList.remove('hidden');
+     }
+
+     // whenever form get submit (i.e event listener on submit)  add class of hidden to form-button and remove the hidden class from payment-info.
+     var form = document.getElementById('form')
+     form.addEventListener('submit', function(e){
+        e.preventDefault()
+        console.log('Form Submitted...')
+        document.getElementById('form-button').classList.add('hidden');
+        document.getElementById('payment-info').classList.remove('hidden');
+     })
+    
+     document.getElementById('make-payment').addEventListener('click', function(e){
+         SubmitFormData()
+     })
+     function SubmitFormData(){
+         console.log('Make payment form')
+
+        var UserData = {
+
+            'name' :'null',
+            'email' : 'null',
+            'total' : total,
+        }
+
+        var shippingInfo = {
+            'address' : 'null',
+            'city' : 'null',
+            'state' : 'null',
+            'zipcode' : 'null'
+        }
+        // when shipping is physical get the address, city, state and zipcode value .
+        if (shipping != 'False')
+        {
+            shippingInfo.address = form.address.value
+            shippingInfo.city = form.city.value
+            shippingInfo.state = form.state.value
+            shippingInfo.zipcode = form.zipcode.value
+        }
+        // if user is not logged in then get the user name and emailID value.
+        if(user == 'AnonymousUser')
+        {
+            UserData.name = form.name.value
+            UserData.email = form.email.value
+        }
+       
+        // send data to processOrder
+        var url = 'processOrder'
+
+        fetch(url, {
+            method : 'POST',   // send post request
+            headers:{'ContentType':'application/json',
+            'X-CSRFToken': csrftoken,
+        },
+        // Send the object UserData and shippingInfo to backend in string .
+        body:JSON.stringify({'form':UserData, 'shipping': shippingInfo}),
+        })
+        // when data get sent we want to create response
+        .then((response) => {
+            return  response.json()
+        })
+        // take the data and console it out .
+        .then((data) => {
+            console.log('Success', data);
+            alert('Transaction Completed');
+            // Before we redirect the user we want to clear our cookies
+            // here we will clear our cookie for not logged In user and we set the value of cart to empty object
+            cart = {}
+            // here we set the value of cart to the new cart we created
+            document.cookie = 'cart=' + JSON.stringify(cart)
+            // when transaction get completed send user to store .
+            window.location.href = "{% url 'store' %}"
+        })
+    }      
+</script>
+{% endblock %}
