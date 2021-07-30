@@ -9,17 +9,8 @@ An e-commerce is a website that allows you to buy and sell tangible goods, digit
 
 ### Homepage 
 
-![demo](https://media.giphy.com/media/Pq0HhPiXEW8Yt8v6Yc/giphy.gif)
+![ecom](https://youtu.be/YuPIhzUDuVc)
 
-
-### Crop Recommendation
-
-![demo](https://media.giphy.com/media/lDRZUTSulWOWvec6FW/giphy.gif)
-
-
-### Plant Disease Detection
-
-![demo](https://media.giphy.com/media/PTDgdma07tPDHKxRFm/giphy.gif)
 
 ## Features 
 
