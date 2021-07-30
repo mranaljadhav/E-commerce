@@ -6,10 +6,15 @@ An e-commerce is a website that allows you to buy and sell tangible goods, digit
 
 
 ## Quick Demo
-![image](https://media0.giphy.com/media/8ZdcOtOAV5x5g0Aw4e/giphy.gif?cid=790b7611cff165eec3bdfdcdf74a4a96e1042f6a13025963&rid=giphy.gif&ct=g)
-[](https://media0.giphy.com/media/8ZdcOtOAV5x5g0Aw4e/giphy.gif?cid=790b7611cff165eec3bdfdcdf74a4a96e1042f6a13025963&rid=giphy.gif&ct=g)
+![demo](https://media.giphy.com/media/90JbjdAa5nDq3TJh5u/giphy.gif)
 
-![](https://media0.giphy.com/media/8ZdcOtOAV5x5g0Aw4e/giphy.gif?cid=790b7611cff165eec3bdfdcdf74a4a96e1042f6a13025963&rid=giphy.gif&ct=g)
+- ### Fertilizer suggestion system
+
+![demo](https://media.giphy.com/media/FLftUXMFo8N2bBjAXq/giphy.gif)
+
+
+- ### Disease Detection system
+![demo](https://media.giphy.com/media/NnMwEp2tGZdfnJbyjr/giphy.gif)
 
 ## Features Included
 
