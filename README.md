@@ -2,6 +2,13 @@
 
 E-commerce ( electronic commerce ) is the activity of electronically buying or selling of products over the Internet. The website displays products. Users can add and remove products to/from their cart while also specifying the quantity of each item and can also buy a digital product.
 
+## Features 
+
+- Custom Admin dashboard
+- Search Functionality
+- Shopping Cart
+- Responsive, mobile-friendly design
+
 ## Technology Used
 
 ### Front End 
@@ -15,18 +22,6 @@ JavaScript
 Python<br>
 Django<br>
 SQL
-
-## Quick Demo
-
-![ecom](https://media.giphy.com/media/udos909LXwOyNgc2Fa/giphy.gif)
-
-
-## Features 
-
-- Custom Admin dashboard
-- Search Functionality
-- Shopping Cart
-- Responsive, mobile-friendly design
 
 ## Installation
 
@@ -46,3 +41,8 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
+
+## Quick Demo
+
+![ecom](https://media.giphy.com/media/udos909LXwOyNgc2Fa/giphy.gif)
+
