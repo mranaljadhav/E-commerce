@@ -21,7 +21,7 @@ An e-commerce is a website that allows you to buy and sell tangible goods, digit
 
 ![demo](https://media.giphy.com/media/PTDgdma07tPDHKxRFm/giphy.gif)
 
-## Features Included
+## Features 
 
 - Custom Admin dashboard
 - Search Functionality
