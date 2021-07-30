@@ -9,7 +9,7 @@ An e-commerce is a website that allows you to buy and sell tangible goods, digit
 
 ### Homepage 
 
-![ecom](https://youtu.be/YuPIhzUDuVc)
+![ecom](https://media.giphy.com/media/udos909LXwOyNgc2Fa/giphy.gif)
 
 
 ## Features 
