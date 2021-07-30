@@ -1,9 +1,19 @@
 # E-commerce
 
-An e-commerce is a website that allows you to buy and sell tangible goods, digital products online.
+E-commerce ( electronic commerce ) is the activity of electronically buying or selling of products over the Internet. The website displays products. Users can add and remove products to/from their cart while also specifying the quantity of each item and can also buy a digital product.
 
 ## Technology Used
 
+### Front End 
+
+HTML
+CSS 
+JavaScript 
+
+### Backend 
+
+Python 
+Django
 
 ## Quick Demo
 
