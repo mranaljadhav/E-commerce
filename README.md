@@ -6,14 +6,15 @@ E-commerce ( electronic commerce ) is the activity of electronically buying or s
 
 ### Front End 
 
-HTML
-CSS 
+HTML<br>
+CSS <br>
 JavaScript 
 
 ### Backend 
 
-Python 
-Django
+Python<br>
+Django<br>
+SQL
 
 ## Quick Demo
 
