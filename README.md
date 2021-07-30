@@ -6,7 +6,7 @@ An e-commerce is a website that allows you to buy and sell tangible goods, digit
 
 
 ## Quick Demo
-![demo](https://media.giphy.com/media/8ZdcOtOAV5x5g0Aw4e/giphy.mp4)
+![demo](https://media.giphy.com/media/WwMHUcuqMV95cXRCKI/giphy.gif)
 
 - ### Fertilizer suggestion system
 
