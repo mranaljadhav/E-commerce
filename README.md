@@ -14,7 +14,7 @@ An e-commerce is a website that allows you to buy and sell tangible goods, digit
 
 
 - ### Disease Detection system
-![demo](https://media.giphy.com/media/NnMwEp2tGZdfnJbyjr/giphy.gif)
+![demo](https://media.giphy.com/media/8ZdcOtOAV5x5g0Aw4e/giphy.gif)
 
 ## Features Included
 
