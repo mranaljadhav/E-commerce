@@ -13,7 +13,7 @@ An e-commerce is a website that allows you to buy and sell tangible goods, digit
 
 ### Crop Recommendation
 
-![demo](https://media.giphy.com/media/lDRZUTSulWOWvec6FW/giphy.gif)
+![demo](https://media.giphy.com/media/eG6dJau8l6uZ9RKVLu/giphy.gif)
 
 
 ### Plant Disease Detection
